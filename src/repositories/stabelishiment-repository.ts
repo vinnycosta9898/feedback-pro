@@ -1,5 +1,11 @@
-import { Stabeshiment } from "@prisma/client";
+import { Prisma, Stabeshiment } from "@prisma/client";
+
+export interface StabelishimentProps{
+    name: string
+    cnpj: string
+}
+
 
 export interface StabelishimentsReposity{
-    create(data: Stabeshiment): Promise<Stabeshiment>
+    create(data: StabelishimentProps): Promise<StabelishimentProps>
 }

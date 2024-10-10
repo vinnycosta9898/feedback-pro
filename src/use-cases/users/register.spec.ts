@@ -2,7 +2,6 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { InMemmoryUsersRepository } from '../../repositories/in-memmory/in-memmory-users-repository'
 import { RegisterUseCase } from './register'
 import { PasswordLengthError } from '../../errors/password-length-error'
-import { UserAlreadyExistsError } from '../../errors/user-already-exists-error'
 
 let usersRepository: InMemmoryUsersRepository
 let sut : RegisterUseCase

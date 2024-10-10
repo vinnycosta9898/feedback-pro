@@ -18,4 +18,14 @@ export class InMemmoryUsersRepository implements UsersRepository {
 
         return user
     }
+
+    async findByEmail(email: string){
+        const user = await this.items.find(item => item.email === email)
+
+        if(!user){
+            return null
+        }
+
+        return user
+    }
 }

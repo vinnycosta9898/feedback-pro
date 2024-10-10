@@ -1,7 +1,7 @@
 import { Prisma } from "@prisma/client";
 import { StabelishimentProps, StabelishimentsReposity } from "../../repositories/stabelishiment-repository";
 
-interface CreateStabelishimentRequest extends Prisma.StabeshimentCreateInput{}
+interface CreateStabelishimentRequest extends StabelishimentProps{}
 
 type CreateStabelishimentResponse = StabelishimentProps
 

@@ -1,4 +1,3 @@
-import { InMemmoryQuestionsRepository } from "../../repositories/in-memmory/in-memmory-questions-repository";
 import { PrismaQuestionsRepository } from "../../repositories/prisma/prisma-questions-repository";
 import { CreateQuestionUseCase } from "../../use-cases/questions/create-question";
 

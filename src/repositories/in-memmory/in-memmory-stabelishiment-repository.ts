@@ -13,7 +13,6 @@ export class InMemmoryStabelishimentRepository implements StabelishimentsReposit
             createdAt: new Date(),
             updatedAt: new Date(),
             userId: 'user-id'
-
         }
 
         this.items.push(stabelishiment)

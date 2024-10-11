@@ -1,8 +1,11 @@
-import { StabelishimentProps, StabelishimentsReposity } from "../../repositories/stabelishiment-repository";
+import { Prisma, Stabeshiment } from "@prisma/client";
+import { StabelishimentsReposity } from "../../repositories/stabelishiment-repository";
 
-interface CreateStabelishimentRequest extends StabelishimentProps{}
+interface CreateStabelishimentRequest extends Prisma.StabeshimentCreateInput{}
 
-type CreateStabelishimentResponse = StabelishimentProps
+interface CreateStabelishimentResponse {
+    stabelishiment: Stabeshiment
+}
 
 export class CreateStabelishimentUseCase{
     constructor(private stabelishimentsRepository: StabelishimentsReposity){}
@@ -17,6 +20,8 @@ export class CreateStabelishimentUseCase{
             cnpj,
         })
         
-        return stabelishiment
+        return {
+            stabelishiment
+        }
     }
 }

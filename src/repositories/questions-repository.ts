@@ -1,11 +1,6 @@
-import { Question } from "@prisma/client";
-
-export interface QuestionProps{
-    title: string
-    stabeshimentId: string
-}
+import { Prisma, Question } from "@prisma/client";
 
 export interface QuestionsRepository{
-    create(data: QuestionProps): Promise<Question>
+    create(data: Question): Promise<Question>
     findMany(stabelishimentId: string): Promise<Question[] | null>
 }

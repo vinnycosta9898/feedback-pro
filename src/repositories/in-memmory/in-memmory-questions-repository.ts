@@ -1,17 +1,17 @@
 import { randomUUID } from "crypto";
-import { QuestionProps, QuestionsRepository } from "../questions-repository";
+import { QuestionsRepository } from "../questions-repository";
 import { Question } from "@prisma/client";
 
 export class InMemmoryQuestionsRepository implements QuestionsRepository{
     public items: Question[] = []
 
-    async create(data: QuestionProps){
+    async create(data: Question){
         const question = {
             id: randomUUID(),
             title: data.title,
-            stabeshimentId: data.stabeshimentId,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            createdAt: new Date(),  
+            updatedAt: new Date(),
+            stabeshimentId: data.stabeshimentId
         }
 
         this.items.push(question)

@@ -1,4 +1,4 @@
-import { Prisma, Question } from "@prisma/client";
+import { Question } from "@prisma/client";
 
 export interface QuestionsRepository{
     create(data: Question): Promise<Question>

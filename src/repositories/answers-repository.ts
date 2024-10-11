@@ -7,4 +7,5 @@ export interface AnswerProps{
 
 export interface AnswersRepository{
     create(data: AnswerProps): Promise<Answer>
+    findMany(questionId: string): Promise<Answer[] | null>
 }

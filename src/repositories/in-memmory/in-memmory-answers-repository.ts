@@ -17,4 +17,8 @@ export class InMemmoryAnswersRepository implements AnswersRepository{
 
         return answer
     }
+
+    async findMany(questionId: string){
+        return this.items.filter((item) => item.questionId === questionId)
+    }
 }

@@ -11,13 +11,14 @@ interface CreateQuestionResponse {
 export class CreateQuestionUseCase{
     constructor(private questionsRepository: QuestionsRepository){}
 
-    async execute({ title } : CreateQuestionRequest) : Promise<CreateQuestionResponse>{
+    async execute({ title, stabeshimentId } : CreateQuestionRequest) : Promise<CreateQuestionResponse>{
         if(title.length < 2 || title.length > 256){
             throw new TitleQuestionLengthError()
         }
 
         const question = await this.questionsRepository.create({
-            title
+            title,
+            stabeshimentId
         })
 
         return {

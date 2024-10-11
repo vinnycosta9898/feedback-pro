@@ -9,6 +9,7 @@ export class InMemmoryQuestionsRepository implements QuestionsRepository{
         const question = {
             id: randomUUID(),
             title: data.title,
+            stabeshimentId: data.stabeshimentId,
             createdAt: new Date(),
             updatedAt: new Date()
         }
@@ -17,5 +18,10 @@ export class InMemmoryQuestionsRepository implements QuestionsRepository{
 
         return question
 
+    }
+
+    async findMany(stabelishimentId: string){
+        return this.items
+        .filter((item) => item.stabeshimentId === stabelishimentId)
     }
 }

@@ -27,6 +27,7 @@ CREATE TABLE "questions" (
     "title" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "stabeshimentId" TEXT,
 
     CONSTRAINT "questions_pkey" PRIMARY KEY ("id")
 );
@@ -49,6 +50,9 @@ CREATE UNIQUE INDEX "stabelishiments_cnpj_key" ON "stabelishiments"("cnpj");
 
 -- AddForeignKey
 ALTER TABLE "stabelishiments" ADD CONSTRAINT "stabelishiments_userId_fkey" FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "questions" ADD CONSTRAINT "questions_stabeshimentId_fkey" FOREIGN KEY ("stabeshimentId") REFERENCES "stabelishiments"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "answers" ADD CONSTRAINT "answers_questionId_fkey" FOREIGN KEY ("questionId") REFERENCES "questions"("id") ON DELETE SET NULL ON UPDATE CASCADE;

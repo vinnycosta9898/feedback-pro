@@ -34,15 +34,19 @@ model Stabeshiment {
   user   User   @relation(fields: [userId], references: [id])
   userId String
 
+  question Question[]
+
   @@map("stabelishiments")
 }
 
 model Question {
-  id        String   @id @default(uuid())
-  title     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  answer    Answer[]
+  id             String        @id @default(uuid())
+  title          String
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @default(now())
+  answer         Answer[]
+  Stabeshiment   Stabeshiment? @relation(fields: [stabeshimentId], references: [id])
+  stabeshimentId String
 
   @@map("questions")
 }

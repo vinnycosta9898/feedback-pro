@@ -1,5 +1,3 @@
-import { Prisma, Stabeshiment } from "@prisma/client";
-
 export interface StabelishimentProps{
     name: string
     cnpj: string

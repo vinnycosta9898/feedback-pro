@@ -14,7 +14,8 @@ describe("Create question test", () => {
 
     it("should be able to create a question", async () => {
         const { question } = await sut.execute({
-            title: 'How was the exeprience today?'
+            title: 'How was the exeprience today?',
+            stabeshimentId: 'user-id'
         })
 
         expect(question.title).toEqual(expect.any(String))
@@ -23,7 +24,8 @@ describe("Create question test", () => {
     it('should not be able to create a question with less 2 cacarchteres', async () => {
         await expect(() =>  
             sut.execute({
-                title: 'x'
+                title: 'x',
+                stabeshimentId: 'user-id'
         })).rejects.toBeInstanceOf(TitleQuestionLengthError)
     })
 })

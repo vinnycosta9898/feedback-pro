@@ -3,7 +3,6 @@ export interface StabelishimentProps{
     cnpj: string
 }
 
-
 export interface StabelishimentsReposity{
     create(data: StabelishimentProps): Promise<StabelishimentProps>
 }

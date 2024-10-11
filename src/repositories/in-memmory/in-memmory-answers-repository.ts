@@ -1,11 +1,11 @@
 import { randomUUID } from "node:crypto";
-import { Answer } from "@prisma/client";
+import { Answer, Prisma } from "@prisma/client";
 import { AnswersRepository } from "../answers-repository";
 
 export class InMemmoryAnswersRepository implements AnswersRepository{
     public items: Answer[] = []
 
-    async create(data: Answer){
+    async create(data: Prisma.AnswerCreateInput){
         const answer = {
             id: randomUUID(),
             content: data.content,

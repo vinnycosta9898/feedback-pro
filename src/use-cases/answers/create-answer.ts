@@ -1,7 +1,7 @@
-import { Answer } from "@prisma/client";
-import { AnswerProps, AnswersRepository } from "../../repositories/answers-repository";
+import { Answer, Prisma } from "@prisma/client";
+import { AnswersRepository } from "../../repositories/answers-repository";
 
-interface CreateAnswerRequest extends AnswerProps{}
+interface CreateAnswerRequest extends Prisma.AnswerCreateInput{}
 
 interface CreateAnswerResponse {
     answer: Answer

@@ -56,7 +56,7 @@ model Answer {
   content    String
   grade      Int
   Question   Question? @relation(fields: [questionId], references: [id])
-  questionId String?
+  questionId String
 
   @@map("answers")
 }
